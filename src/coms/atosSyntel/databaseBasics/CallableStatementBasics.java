@@ -42,8 +42,7 @@ public class CallableStatementBasics {
          Logger.getLogger(CallableStatementBasics.class.getName()).log(Level.SEVERE, null, ex);
      }
      try {
-       myCallableStatement.setInt(2,103);
-       // so if there are two input...you do ....       
+       myCallableStatement.setInt(2,103);        
        myCallableStatement.registerOutParameter(1,Types.VARCHAR);
        myCallableStatement.executeQuery();
        String employename=myCallableStatement.getString(1); 

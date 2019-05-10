@@ -29,6 +29,8 @@ public class ManageCallableStatement {
         System.out.println("display after delete COO1");
         callObje.displayDataCallableStatment();
         System.out.println("search for object with id =COO2");
+        System.out.println("the searched name with id COO2 is");
+        //System.out.println(callObje.search("COO2"));       
         callObje.search("COO2");
         System.out.println("search for object with name = target");
         callObje.searchName("Target");

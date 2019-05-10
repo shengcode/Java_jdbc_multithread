@@ -83,11 +83,11 @@ public class CRUDCallableStatements implements CRUDOperationsCollections {
     }
 
     @Override
-    public void search(String id) {
+    public  void search(String id) {
         try{
         myCallableStatement=myOracleConnection.prepareCall("{call EARCH_ID_01 (?,?) }");
         myCallableStatement.setString(1,id);
-         myCallableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+        myCallableStatement.registerOutParameter(2, OracleTypes.CURSOR);
         myCallableStatement.executeUpdate();
         myOracleRS = (ResultSet) myCallableStatement.getObject(2);
         } catch(SQLException ex){
@@ -150,6 +150,7 @@ public class CRUDCallableStatements implements CRUDOperationsCollections {
         } catch(SQLException ex){
             System.out.println(ex.getMessage());
         }
+        
         try {
             myCallableStatement.close();
         }catch (SQLException ex){
